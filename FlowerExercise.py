@@ -2,6 +2,7 @@ import os
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
+from PIL import Image
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 

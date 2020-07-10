@@ -2,8 +2,11 @@ import os
 
 from AnimalsExample import AnimalsExample
 from AnimalsExampleWithAugmentation import AnimalsExampleWithAugmentation
+from AnimalsExampleWithAugmentationFromTensorflowHub import AnimalsExampleWithAugmentationFromTensorflowHub
 from ClothesExample import ClothesExample
 from FlowerExercise import FlowerExercise
+from Reuters import Reuters
+from Reviews import Reviews
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -19,8 +22,14 @@ def main():
     # animals_with_aug.run()
     # clothes = ClothesExample(CLOTHES_BATCH_SIZE)
     # clothes.run()
-    flowers = FlowerExercise(CLOTHES_BATCH_SIZE, IMG_SHAPE)
-    flowers.run()
+    # flowers = FlowerExercise(CLOTHES_BATCH_SIZE, IMG_SHAPE)
+    # flowers.run()
+    # hub_animals = AnimalsExampleWithAugmentationFromTensorflowHub(CLOTHES_BATCH_SIZE, 224)
+    # hub_animals.run()
+    # imdb = Reviews()
+    # imdb.run()
+    reuters = Reuters()
+    reuters.run()
 
 
 if __name__ == "__main__":
