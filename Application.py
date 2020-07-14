@@ -5,6 +5,7 @@ from AnimalsExampleWithAugmentation import AnimalsExampleWithAugmentation
 from AnimalsExampleWithAugmentationFromTensorflowHub import AnimalsExampleWithAugmentationFromTensorflowHub
 from ClothesExample import ClothesExample
 from FlowerExercise import FlowerExercise
+from HousingPrices import HousingPrices
 from Reuters import Reuters
 from Reviews import Reviews
 
@@ -28,8 +29,10 @@ def main():
     # hub_animals.run()
     # imdb = Reviews()
     # imdb.run()
-    reuters = Reuters()
-    reuters.run()
+    # reuters = Reuters()
+    # reuters.run()
+    housing = HousingPrices(500)
+    housing.run()
 
 
 if __name__ == "__main__":

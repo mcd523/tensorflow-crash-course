@@ -10,7 +10,7 @@ class Reuters:
         return
 
     def run(self):
-        # get data from imdb datastore
+        # get data from reuters datastore
         (train_data, train_labels), (test_data, test_labels) = reuters.load_data(num_words=10000)
         # print review encoded as numbers (words in review 1-1 map with integer)
         print(train_data[0])
@@ -54,6 +54,8 @@ class Reuters:
         y_val = one_hot_train_labels[:1000]
         partial_y_train = one_hot_train_labels[1000:]
 
+        # after running this once, you'll notice that loss on the validation set begins to increase around 8-10 epochs,
+        # re-run with epochs=9 and uncomment line 68-69
         history = model.fit(
             partial_x_train,
             partial_y_train,
@@ -61,6 +63,12 @@ class Reuters:
             batch_size=512,
             validation_data=(x_val, y_val)
         )
+
+        # returns vector of test loss and test accuracy
+        # results = model.evaluate(x_test, one_hot_test_labels)
+        # print(results)
+
+        # self.handle_predictions(model, x_test)
 
         # plt.clf()  # clears plot
         self.handle_loss_plot(history)
@@ -109,3 +117,6 @@ class Reuters:
         plt.ylabel('Accuracy')
         plt.legend()
         plt.show()
+
+    def handle_predictions(self, model, x_test):
+        predictions = model.predict(x_test)
